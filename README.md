@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Voxamir
 
-## Getting Started
+Voxamir is a browser-first voice calling prototype built with Next.js. The current app demonstrates an AI-powered, low-bandwidth call UI with local WebRTC transport and simulated latent packet flow.
 
-First, run the development server:
+## What’s included
+
+- Custom responsive landing page with product overview and MVP demo link
+- `/mvp` call-style demo page with:
+  - microphone capture using the Web Audio API
+  - local `RTCPeerConnection` and WebRTC `DataChannel`
+  - simulated latent encoding and packet transmission
+  - realtime metrics for status, connection, and packet counters
+- Modern dark UI with mobile-responsive layout
+
+## Current status
+
+Completed:
+- Defined MVP scope and success criteria
+- Initialized Git repository and pushed to GitHub
+- Built frontend call UI and home page UI
+- Implemented local WebRTC demo flow in browser
+- Verified Next.js build successfully
+
+In progress:
+- Setup development environment and dependency management
+- Improve backend API for signaling and multi-peer call support
+- Add actual voice codec / latent encoding pipeline
+- Integrate real call provider or peer signaling backend
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and browse to `/mvp` for the call demo.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.js` — landing homepage
+- `src/app/mvp/page.js` — MVP voice call demo
+- `src/app/layout.js` — global layout settings
+- `README.md` — project overview and instructions
 
-## Learn More
+## Next steps
 
-To learn more about Next.js, take a look at the following resources:
+1. Add backend signaling for remote peer connections
+2. Replace simulated latent packets with a real browser codec
+3. Add voice playback / audio rendering for received latent data
+4. Polish UI/UX for real call flow and mobile behavior
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is built with Next.js 16 and uses Tailwind-style utility classes for styling.
